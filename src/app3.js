@@ -2,7 +2,7 @@ import './app3.css';
 import $ from 'jquery';
 
 const eventBus = $({});
-const localKey = 'app3.active';
+const localKey = 'active';
 
 //数据相关放到M
 const m = {
@@ -17,7 +17,7 @@ const m = {
     update(data) {
         Object.assign(m.data, data);
         eventBus.trigger('m:update');
-        localStorage.setItem('active', m.data.active)
+        // localStorage.setItem(localKey, m.data.active)
     },
     get() {
     }

@@ -11394,7 +11394,7 @@ var _jquery = _interopRequireDefault(require("jquery"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var eventBus = (0, _jquery.default)({});
-var localKey = 'app2.index'; //数据相关放到M
+var localKey = 'index'; //数据相关放到M
 
 var m = {
   data: {
@@ -11405,7 +11405,7 @@ var m = {
   update: function update(data) {
     Object.assign(m.data, data);
     eventBus.trigger('m:update');
-    localStorage.setItem('index', m.data.index.toString());
+    localStorage.setItem(localKey, m.data.index.toString());
   },
   get: function get() {}
 }; //视图相关放到V
@@ -11472,7 +11472,7 @@ var _jquery = _interopRequireDefault(require("jquery"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var eventBus = (0, _jquery.default)({});
-var localKey = 'app3.active'; //数据相关放到M
+var localKey = 'active'; //数据相关放到M
 
 var m = {
   data: {
@@ -11482,8 +11482,7 @@ var m = {
   delete: function _delete() {},
   update: function update(data) {
     Object.assign(m.data, data);
-    eventBus.trigger('m:update');
-    localStorage.setItem('active', m.data.active);
+    eventBus.trigger('m:update'); // localStorage.setItem(localKey, m.data.active)
   },
   get: function get() {}
 }; //视图相关放到V
@@ -11602,7 +11601,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3480" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9147" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

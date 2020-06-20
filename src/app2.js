@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 
 const eventBus = $({});
-const localKey = 'app2.index';
+const localKey = 'index';
 //数据相关放到M
 const m = {
     data: {
@@ -16,7 +16,7 @@ const m = {
     update(data) {
         Object.assign(m.data, data);
         eventBus.trigger('m:update');
-        localStorage.setItem('index', m.data.index.toString())
+        localStorage.setItem(localKey, m.data.index.toString())
     },
     get() {
     }
